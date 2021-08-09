@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/header_layout"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="140dp"
+        app:cardCornerRadius="18dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/login_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="35dp"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/category_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:paddingTop="15dp"
+                android:textSize="15sp"/>
+
+
+            <RadioGroup
+                android:id="@+id/radioBtn_login"
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/Doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor"
+                    android:textSize="15sp"/>
+
+                <RadioButton
+                    android:id="@+id/Patient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:text="Patient"
+                    android:textSize="15sp"/>
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mail_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email Id"
+                    android:paddingLeft="10dp"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/colorGrey"
+                    android:backgroundTint="@color/colorGrey"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:paddingLeft="10dp"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/colorGrey"
+                    android:backgroundTint="@color/colorGrey"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/LOGIN"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/bg_btn_greenish"
+                android:text="LOGIN"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+                //android:onClick="loginBtn"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? Sign up"
+                android:onClick="textloginToSignup"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/signup_ll"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SIGNUP"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30dp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/signup_category_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:paddingTop="15dp"
+                    android:textSize="15sp"/>
+
+
+                <RadioGroup
+                    android:id="@+id/radioBtns_category_signup"
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioBtn_Doctor_signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doctor"
+                        android:textSize="15sp"
+                        android:onClick="radioBtn_Clicked"/>
+
+                    <RadioButton
+                        android:id="@+id/radioBtn_Patient_signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20sp"
+                        android:text="Patient"
+                        android:textSize="15sp"
+                        android:onClick="radioBtn_Clicked"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/su_doctor_ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mail_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email Id"
+                        android:paddingLeft="10dp"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:paddingLeft="10dp"
+                        android:inputType="numberPassword"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:paddingLeft="10dp"
+                        android:inputType="textPersonName"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/degree_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Degree"
+                        android:paddingLeft="10dp"
+                        android:inputType="text"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mobile_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mobile Number"
+                        android:paddingLeft="10dp"
+                        android:inputType="phone"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fees_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Consultation Fees"
+                        android:paddingLeft="10dp"
+                        android:inputType="number"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_su_doctor_next"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bg_btn_greenish"
+                    android:text="NEXT"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                    //android:onClick="doctor_signup_next"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/su_doctor_ll2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/clinicNm_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Clinic Name"
+                        android:paddingLeft="10dp"
+                        android:inputType="text"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/location_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Location"
+                        android:paddingLeft="10dp"
+                        android:inputType="textPostalAddress"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Open_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Clinic Opening Time"
+                        android:paddingLeft="10dp"
+                        android:inputType="time"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Close_signup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Clinic Closing Time"
+                        android:paddingLeft="10dp"
+                        android:inputType="time"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/d_sigupBtn"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bg_btn_greenish"
+                    android:text="SIGNUP"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                    //android:onClick="SignUpBtn"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/su_pat_ll1"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email-Id"
+                        android:paddingLeft="10dp"
+                        android:inputType="textEmailAddress"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pass_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:paddingLeft="10dp"
+                        android:inputType="textPassword"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:paddingLeft="10dp"
+                        android:inputType="textPersonName"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/age_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Age"
+                        android:paddingLeft="10dp"
+                        android:inputType="number"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/gender_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Gender"
+                        android:paddingLeft="10dp"
+                        android:inputType="text"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/su_pat_next"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/bg_btn_greenish"
+                    android:text="NEXT"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                    //android:onClick="btn_patient_signup_next"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/su_pat_ll2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bloodgrp_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Blood Group"
+                        android:paddingLeft="10dp"
+                        android:inputType="text"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/city_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="City"
+                        android:paddingLeft="10dp"
+                        android:inputType="text"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/medicalhist_signup_p"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Medical History"
+                        android:paddingLeft="10dp"
+                        android:inputType="textShortMessage"
+                        android:textColorHint="@color/colorGrey"
+                        android:backgroundTint="@color/colorGrey"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/p_signup"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/bg_btn_greenish"
+                    android:text="SIGNUP"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"/>
+                    //android:onClick="SignUpBtn"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
